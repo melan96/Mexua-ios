@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -11,6 +11,9 @@
 		1DAF4794267F83BB00E1DBA8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DAF4793267F83BB00E1DBA8 /* ContentView.swift */; };
 		1DAF4796267F83BF00E1DBA8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1DAF4795267F83BF00E1DBA8 /* Assets.xcassets */; };
 		1DAF4799267F83BF00E1DBA8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1DAF4798267F83BF00E1DBA8 /* Preview Assets.xcassets */; };
+		1DAF47A6267F96C300E1DBA8 /* BottomSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DAF47A5267F96C300E1DBA8 /* BottomSheetView.swift */; };
+		1DAF47AA267F9AE700E1DBA8 /* BottomSheet in Frameworks */ = {isa = PBXBuildFile; productRef = 1DAF47A9267F9AE700E1DBA8 /* BottomSheet */; };
+		1DAF47AD267F9C5700E1DBA8 /* MapSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DAF47AC267F9C5700E1DBA8 /* MapSettingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +23,8 @@
 		1DAF4795267F83BF00E1DBA8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1DAF4798267F83BF00E1DBA8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		1DAF479A267F83BF00E1DBA8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1DAF47A5267F96C300E1DBA8 /* BottomSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetView.swift; sourceTree = "<group>"; };
+		1DAF47AC267F9C5700E1DBA8 /* MapSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapSettingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,6 +32,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1DAF47AA267F9AE700E1DBA8 /* BottomSheet in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -57,6 +63,8 @@
 				1DAF4795267F83BF00E1DBA8 /* Assets.xcassets */,
 				1DAF479A267F83BF00E1DBA8 /* Info.plist */,
 				1DAF4797267F83BF00E1DBA8 /* Preview Content */,
+				1DAF47A5267F96C300E1DBA8 /* BottomSheetView.swift */,
+				1DAF47AC267F9C5700E1DBA8 /* MapSettingView.swift */,
 			);
 			path = Mexua;
 			sourceTree = "<group>";
@@ -85,6 +93,9 @@
 			dependencies = (
 			);
 			name = Mexua;
+			packageProductDependencies = (
+				1DAF47A9267F9AE700E1DBA8 /* BottomSheet */,
+			);
 			productName = Mexua;
 			productReference = 1DAF478E267F83BB00E1DBA8 /* Mexua.app */;
 			productType = "com.apple.product-type.application";
@@ -112,6 +123,9 @@
 				Base,
 			);
 			mainGroup = 1DAF4785267F83BB00E1DBA8;
+			packageReferences = (
+				1DAF47A8267F9AE600E1DBA8 /* XCRemoteSwiftPackageReference "BottomSheet" */,
+			);
 			productRefGroup = 1DAF478F267F83BB00E1DBA8 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -140,6 +154,8 @@
 			files = (
 				1DAF4794267F83BB00E1DBA8 /* ContentView.swift in Sources */,
 				1DAF4792267F83BB00E1DBA8 /* MexuaApp.swift in Sources */,
+				1DAF47AD267F9C5700E1DBA8 /* MapSettingView.swift in Sources */,
+				1DAF47A6267F96C300E1DBA8 /* BottomSheetView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -328,6 +344,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1DAF47A8267F9AE600E1DBA8 /* XCRemoteSwiftPackageReference "BottomSheet" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/weitieda/BottomSheet";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.6;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1DAF47A9267F9AE700E1DBA8 /* BottomSheet */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1DAF47A8267F9AE600E1DBA8 /* XCRemoteSwiftPackageReference "BottomSheet" */;
+			productName = BottomSheet;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 1DAF4786267F83BB00E1DBA8 /* Project object */;
 }
