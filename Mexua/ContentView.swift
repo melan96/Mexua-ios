@@ -11,13 +11,19 @@ import BottomSheet
 struct ContentView: View {
 
     @State var showMapSetting = false
+    @State private var time:Int = 12
+    
+   
+    
+   
+    
     var body: some View {
         
-        VStack{
+        VStack(alignment: .center){
             HStack {
                 Text("Focus /\nRelax / \nBreathe /").font(.largeTitle).bold()
                 Spacer()
-                Text("05").font(.system(size: 70)).bold().font(.largeTitle)
+                Text(String(time)).font(.system(size: 70)).bold().font(.largeTitle)
                 
             }
             HStack(alignment:.firstTextBaseline , spacing: /*@START_MENU_TOKEN@*/nil/*@END_MENU_TOKEN@*/, content: {
@@ -26,22 +32,46 @@ struct ContentView: View {
                 Circle().size(CGSize(width: 10.0, height: 10.0))
             }).fixedSize().frame(width: 400,  alignment: .topLeading)
             
-            ZStack {
-                Circle().fill(RadialGradient(gradient: Gradient(colors: [Color.yellow, Color.orange,.purple]), center: .top, startRadius: 60, endRadius: 500))
-                
-               
-                
-                Rectangle().frame(width: .infinity, height: 400, alignment: .bottomLeading).foregroundColor(.white).opacity(0.5).blur(radius: 30).position(x: 200, y: 500.0)
-                
-                
-                
-                
+            
+            Circle().fill(RadialGradient(gradient: Gradient(colors: [Color.yellow, Color.orange,.purple]), center: .top, startRadius: 60, endRadius: 500)).padding(.all).onTapGesture {
+                print("Circle Tapped")
+                self.time = self.time+1
             }
+                
+        
             HStack {
-                Text("Tap\nCircle to\nStart").font(.title).bold()
+                Button(action: {
+                    print("Tapped")
+                    
+                    Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
+                        print(timer.fireDate)
+                        
+                        self.time = self.time-1
+                        
+                        if(self.time == 0){
+                            timer.invalidate()
+                        }
+                    }
+                    
+                    
+                    
+                    
+                }) {
+                    Text("Tap\nCircle to\nStart").font(.title).bold()
+                }
+                .accentColor(/*@START_MENU_TOKEN@*/.black/*@END_MENU_TOKEN@*/)
                 Spacer()
-                Text("00").font(.system(size:60)).bold()
-            }.padding()
+                
+                
+                ZStack {
+                    RoundedRectangle(cornerRadius: 18)
+                        .frame(width: 100.0, height: 100.0)
+                        .foregroundColor(Color(red: 1.0, green: 0.714, blue: 0.0))
+                    
+                    Text("00").font(.system(size:50)).bold().accentColor(/*@START_MENU_TOKEN@*/.black/*@END_MENU_TOKEN@*/).foregroundColor(.gray)
+                    
+                }
+            }.padding(.all)
             
             
         }.padding()
